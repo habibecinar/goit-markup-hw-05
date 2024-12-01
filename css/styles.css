@@ -547,6 +547,7 @@ a {
   position: absolute; /* Modal'ı ekrana göre hizalamak için kullanılır */
   top: 50%; /* Yatay merkezleme */
   left: 50%; /* Dikey merkezleme */
+  padding: 72px 24px 24px 24px;
   transform: translate(-50%, -50%); /* Tam merkezleme */
   width: 408px; /* Genişlik */
   min-height: 584px; /* Minimum yükseklik */
