@@ -528,3 +528,243 @@ a {
 .subscribe-container .subscribe-form .form-btn .send-icon {
   margin-left: 16px;
 }
+/* Modal Window */
+.modal-window {
+  position: fixed; /* Sayfa boyunca sabitlenir */
+  top: 0; /* Sayfanın üst kısmına hizalanır */
+  left: 0; /* Sayfanın sol kısmına hizalanır */
+  width: 100%; /* Sayfanın tamamını kaplar */
+  height: 100%; /* Yükseklik olarak tüm ekranı kaplar */
+  background-color: rgba(46, 47, 66, 0.4); /* Yarı saydam arka plan */
+  visibility: visible; /* Başlangıçta gizli */
+  opacity: 1; /* Başlangıçta görünmez */
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Modal Container */
+.modal-container {
+  position: absolute; /* Modal'ı ekrana göre hizalamak için kullanılır */
+  top: 50%; /* Yatay merkezleme */
+  left: 50%; /* Dikey merkezleme */
+  transform: translate(-50%, -50%); /* Tam merkezleme */
+  width: 408px; /* Genişlik */
+  min-height: 584px; /* Minimum yükseklik */
+  background: #fcfcfc; /* Beyaz arka plan */
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2); /* Gölge efekti */
+  border-radius: 4px; /* Köşelerin yuvarlanması */
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); /* Yumuşak animasyon */
+}
+
+/* Modal Close Button */
+.modal-close-btn {
+  position: absolute; /* Belirli bir konuma yerleştirme */
+  top: 24px; /* Üstten boşluk */
+  right: 24px; /* Sağdan boşluk */
+  width: 24px; /* Düğme genişliği */
+  height: 24px; /* Düğme yüksekliği */
+  border-radius: 50%; /* Yuvarlak düğme */
+  display: flex; /* İçeriği hizalamak için flexbox */
+  align-items: center; /* Dikey merkezleme */
+  justify-content: center; /* Yatay merkezleme */
+  background-color: #e7e9fc; /* Arka plan rengi */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Çerçeve */
+  padding: 0; /* İç boşluk yok */
+  cursor: pointer; /* İmleç tipi */
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1); /* Geçiş efektleri */
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  background-color: #404bbf; /* Hover ve odak sırasında arka plan rengi */
+  border: none; /* Hover ve odak sırasında çerçeve */
+}
+
+/* SVG İçin Temel Stil */
+.modal-close-icon {
+  fill: none; /* SVG'nin dolgu rengini kaldırır */
+  stroke: #434455; /* Çizgi rengi */
+  stroke-width: 2; /* Çizgi kalınlığı */
+  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1); /* SVG çizgi rengi geçişi */
+}
+
+.modal-close-btn:hover .modal-close-icon,
+.modal-close-btn:focus .modal-close-icon {
+  stroke: #f4f4fd; /* Hover ve odak sırasında SVG çizgi rengi */
+}
+/* Modal Message */
+.modal-message {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+  margin-bottom: 16px; /* Alt boşluk */
+}
+/* Form Group */
+.form-group {
+  margin-bottom: 8px;
+}
+
+/* Form Label */
+.form-label {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Input Container */
+.input-container {
+  position: relative;
+}
+
+/* Form Input */
+.form-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  background-color: transparent;
+  padding-left: 38px; /* İkon için boşluk */
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input:focus {
+  border-color: #4d5ae5; /* Odaklanma rengi */
+}
+
+/* Input Icon */
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  fill: rgba(46, 47, 66, 0.4);
+  pointer-events: none; /* İkonun tıklanmasını engeller */
+}
+.form-input:focus ~ .input-icon {
+  fill: #4d5ae5;
+}
+
+/* Form Textarea */
+.form-textarea {
+  width: 100%;
+  height: 120px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  background-color: transparent;
+  padding: 8px 16px;
+  outline: transparent;
+  resize: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-textarea:focus {
+  border-color: #4d5ae5;
+}
+
+/* Privacy Checkbox */
+.form-privacy-label {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #2e2f42;
+  cursor: pointer;
+}
+/* Visually Hidden (Görsel olarak gizleme) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* Privacy Label */
+.form-privacy-label {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* Checkbox ve metin arasında boşluk */
+  cursor: pointer;
+}
+
+/* Checkbox Icon Container */
+.checkbox-icon {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent; /* İkon başlangıçta görünmez */
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Checkbox İkon */
+.checkbox-check {
+  width: 10px;
+  height: 8px;
+  fill: transparent; /* İkon başlangıçta görünmez */
+}
+
+/* Checkbox Aktif Durum (Checked) */
+.visually-hidden:checked + .form-privacy-label .checkbox-icon {
+  background-color: #4d5ae5;
+  border-color: #4d5ae5;
+}
+
+.visually-hidden:checked + .form-privacy-label .checkbox-check {
+  fill: #ffffff; /* İkon aktif durumda görünür */
+}
+/* Privacy Link */
+.privacy-link {
+  color: #4d5ae5;
+  text-decoration: none;
+}
+
+.privacy-link:hover {
+  text-decoration: underline;
+}
+
+/* Submit Button */
+.submit-button {
+  display: block;
+  min-width: 169px;
+  height: 56px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  background-color: #4d5ae5;
+  border: none;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.submit-button:hover {
+  background-color: #404bbf;
+}
