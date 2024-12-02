@@ -530,7 +530,7 @@ a {
 }
 
 /* Modal Window Styles */
-.modal-window-overlay {
+.modal-window {
   position: fixed;
   top: 0;
   left: 0;
